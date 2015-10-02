@@ -53,6 +53,18 @@ app.config([
         }
       })
 
+      .state('leaderboard', {
+        url: '/testmakers/{id}/leaderboard',  //'id' is actually a route parameter that will be made available to our controller.
+        templateUrl: '/leaderboard.html',
+        controller: 'TestmakersCtrl',
+        resolve: {
+          testmaker: ['$stateParams', 'testmakers', function($stateParams, testmakers){
+            console.log("$stateParams.score", $stateParams.score)
+            return testmakers.getOne($stateParams.id)
+          }]
+        }
+      })
+
     $urlRouterProvider.otherwise('home')
   }
 ])

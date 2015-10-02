@@ -9,13 +9,13 @@ a {
   color: #00B7FF;
 }
 
-.qanda {
+.q-and-a {
   text-align:center;
   margin-top:75px;
 }
 
 .options button, .options a {
-  margin:25px 25px;
+  margin:25px 0px;
   text-align:center;
 }
 
@@ -24,11 +24,46 @@ a {
     margin: 0 auto;
 }
 
+.questions, .heading, #leaderboard {
+  font-family: 'Merriweather', serif;
+}
+
 .options h3 {
   display:inline-block;
+  text-align:center;
 }
 
 form * {
   text-align:center;
   margin:5px auto;
+}
+
+.centered{
+  text-align:center;
+  margin:0 auto;
+}
+
+.heading {
+  color: #4fa74f;
+
+}
+
+#leaderboard td{
+  padding: 0px 30px;
+  font-size: 24px;
+}
+
+.table-hover tbody tr:hover td {
+    background: #4fa74f;
+}
+
+a p{
+  font-style: italic;
+  display:inline-block;
+}
+
+
+a:hover {
+  color:white;
+  text-decoration:none;
 }

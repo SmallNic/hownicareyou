@@ -12,6 +12,12 @@
     <!-- Hand rolled CSS -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Google Merriweather Stylesheet -->
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
+
     <!-- Latest build of jQuery -->
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
@@ -37,7 +43,10 @@
             <a href="#/testmakers/{{testmaker._id}}/taketest">
               <h1>How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} Are You?</h1>
             </a>
-            <p><a href="#/testmakers/{{testmaker._id}}/addquestions">Add Questions</a></p>
+            <a href="#/testmakers/{{testmaker._id}}/leaderboard">
+            <p> <i class="fa fa-users"></i>  Leaderboard</p>
+            </a> |
+            <a href="#/testmakers/{{testmaker._id}}/addquestions">Add Questions</a>
 
           </div><!-- End .Col -->
         </div><!-- End .Row -->
@@ -52,6 +61,9 @@
           <div class="col-sm-12">
             <a href="#/testmakers/{{testmaker._id}}/taketest">
               <h1>How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} Are You?</h1>
+            </a>
+            <a href="#/testmakers/{{testmaker._id}}/leaderboard">
+              <h3>Leaderboard</h3>
             </a>
           </div>
         </div>
@@ -86,23 +98,33 @@
       <div class="container-fluid">
 
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-md-8">
             <a href="#/testmakers/{{testmaker._id}}/taketest">
               <h1>How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} Are You?</h1>
+            </a>
+            <a href="#/testmakers/{{testmaker._id}}/leaderboard">
+              <p> <i class="fa fa-users"></i>  Leaderboard</p>
             </a>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-sm-6 col-centered">
-            <div class="qanda">
+          <div class="col-md-6 col-sm-12 col-xs-12 col-centered">
+            <div class="q-and-a">
               <!-- <div class="questions row"> <h3>{{currentQuestion.content}}</h3> </div> -->
               <div class="questions row"><h2>Question {{index -1}}</h2></div>
               <div class="options row">
-                <button type="button" class="btn btn-lg btn-success" ng-click="makeChoice(0)">{{currentQuestion.options[0]}}</button> <h3>OR</h3>
-                <button  type="button" class="btn btn-lg btn-success" ng-click="makeChoice(1)">{{currentQuestion.options[1]}}</button>
+                <div class="col-md-5 col-sm-5 col-xs-12 center-block">
+                  <button type="button" class="btn btn-lg btn-success" ng-click="makeChoice(0)">{{currentQuestion.options[0]}}</button>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                  <h3>OR</h3>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-12 center-block">
+                  <button  type="button" class="btn btn-lg btn-success" ng-click="makeChoice(1)">{{currentQuestion.options[1]}}</button>
+                </div>
               </div><!-- End .options -->
-            </div><!-- End .qanda -->
+            </div><!-- End .q-and-a -->
           </div><!-- End .col -->
         </div><!-- End .row -->
 
@@ -118,43 +140,47 @@
             <a href="#/testmakers/{{testmaker._id}}/taketest">
               <h1>How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} Are You?</h1>
             </a>
+            <a href="#/testmakers/{{testmaker._id}}/leaderboard">
+            <p> <i class="fa fa-users"></i>  Leaderboard</p>
+            </a>
           </div>
         </div>
 
         <div class="row">
           <div class="col-sm-6 col-centered">
-            <div class="qanda">
-              <div class="questions row"><h2>Score: {{score}}%</h2></div>
+            <div class="q-and-a">
+              <div class="questions row"><h2>You are {{score}}% Nic</h2></div>
               <div class="options row">
-                <button type="button" class="btn btn-lg btn-primary" ng-click="formIsVisible = !formIsVisible">Save Name</button><h3>OR</h3>
-                <a href="#/testmakers/{{testmaker._id}}/taketest" class="btn btn-lg btn-danger" ng-click="restartTest()">Try Again</a>
-              </div><!-- End .options -->
-            </div><!-- End .qanda -->
-          </div><!-- End .col -->
-        </div><!-- End .row -->
+                <div class="col-md-5 col-sm-5 col-xs-12 center-block">
 
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="row">
-              <div ng-repeat="testtaker in testmaker.testtakers | orderBy: '-score'">
-                <span> {{testtaker.name}} </span> - <span> {{testtaker.score}} </span>
-              </div>
-            </div><!-- End .Row -->
+                  <button type="button" class="btn btn-lg btn-primary" ng-click="formIsVisible = !formIsVisible">Save Name</button>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                  <h3>OR</h3>
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-12 center-block">
+                  <a href="#/testmakers/{{testmaker._id}}/taketest" class="btn btn-lg btn-danger" ng-click="restartTest()">Try Again</a>
+                </div>
+
+              </div><!-- End .options -->
+            </div><!-- End .q-and-a -->
           </div><!-- End .col -->
         </div><!-- End .row -->
 
         <div class="row">
           <div class="col-sm-6 col-centered">
-            <form ng-show="formIsVisible" ng-submit="addTesttaker()" style="margin-top: 30px;">
+            <form ng-show="formIsVisible" ng-submit="addTesttaker(); formIsVisible = !formIsVisible; l" style="margin-top: 30px;">
               <h3>Save Your Score</h3>
-              <div class="form-group ">
                 <div class="row">
-                  <div class="col-sm-4 col-md-offset-4">
+                  <div class="col-sm-6 col-centered">
                     <input type="text" class="form-control" placeholder="Name" ng-model="name"></input>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-sm btn-success">Submit</button>
-              </div>
+                <div class ="row">
+                  <button type="submit" class="btn btn-sm btn-success">Submit</button>
+                </div>
             </form>
           </div><!-- End .Col -->
         </div><!-- End .Row -->
@@ -164,7 +190,36 @@
     </script>
 
 
-    <script type="text/ng-template" id="/lederboard.html">
+    <script type="text/ng-template" id="/leaderboard.html">
+
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-sm-12">
+            <a href="#/testmakers/{{testmaker._id}}/taketest">
+              <h1>How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} Are You?</h1>
+            </a>
+            <a href="#/testmakers/{{testmaker._id}}/leaderboard">
+            <p> <i class="fa fa-users"></i>  Leaderboard</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-centered centered">
+            <div class="heading"><h2>Leaderboard</h2></div>
+              <table class="table-bordered table-hover centered" id="leaderboard">
+                <tr ng-repeat="testtaker in testmaker.testtakers | orderBy: '-score'">
+                  <td>{{testtaker.name}}
+                  </td>
+                  <td>{{testtaker.score}}% Nic
+                  </td>
+                </tr>
+              </table>
+          </div><!-- End .col -->
+        </div><!-- End .row -->
+      </div><!-- End .Container-Fluid -->
+
     </script>
 
 

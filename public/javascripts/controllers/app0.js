@@ -50,6 +50,7 @@ app.controller('TestmakersCtrl', [
         score: $scope.score
       }).success(function(testtaker){
         $scope.testmaker.testtakers.push(testtaker);
+        $state.go('leaderboard', {'id':$scope.testmaker._id, 'score':$scope.score})
       });
       // $scope.name = '';
       // $scope.score = '';
@@ -85,18 +86,14 @@ app.controller('TestmakersCtrl', [
         $scope.index++
       }
       $scope.currentQuestion = $scope.testmaker.questions[$scope.index]
-
     }
 
     $scope.formIsVisible = false;
+    $scope.lederboardVisible = false;
     $scope.restartTest = function(option){
       // $location.path('#/testmakers/'+$scope.testmaker.id+'/taketest')
 
     }
-
-
-
-
   }
 ])
 

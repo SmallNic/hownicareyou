@@ -16,6 +16,10 @@ app.factory('testmakers', ['$http', function($http){
     return score;
   }
 
+  resetScore = function(){
+    score = 0;
+  }
+
   obj.getAll = function() {
     return $http.get('/testmakers').success(function(data){
       angular.copy(data, obj.testmakers);

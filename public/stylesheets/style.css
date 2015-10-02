@@ -67,3 +67,25 @@ a:hover {
   color:white;
   text-decoration:none;
 }
+
+h1{
+  display:inline-block;
+}
+
+.svg{
+  border-radius:50%;
+  background:#00b7ff;
+  width:30px;
+  height:30px;
+  margin-top:-15px;
+  padding:3px;
+}
+
+/*.svg:hover {
+  background:#fff;
+
+}*/
+
+a:hover .svg {
+  background:#fff;
+}

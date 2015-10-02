@@ -84,8 +84,8 @@ app.controller('TestmakersCtrl', [
       }
       else {
         $scope.index++
+        $scope.currentQuestion = $scope.testmaker.questions[$scope.index]
       }
-      $scope.currentQuestion = $scope.testmaker.questions[$scope.index]
     }
 
     $scope.formIsVisible = false;

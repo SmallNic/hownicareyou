@@ -12,7 +12,8 @@ require('./models/Questions');
 require('./models/Testtakers');
 var mongoose = require('mongoose');
 // This will open a connection with the 'hownicareyou' database running on our Mongo server. Now we can create our first model.
-mongoose.connect('mongodb://localhost/hownicareyou');
+var mongodbUri = "mongodb://heroku_4n2246p8:3ha4f0ua1uge5bqabtti8vj43f@ds029814.mongolab.com:29814/heroku_4n2246p8"
+mongoose.connect(mongodbUri);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

@@ -37,28 +37,33 @@
 
     <script type="text/ng-template" id="/home.html">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-12" ng-repeat="testmaker in testmakers">
+        <div class="row"  ng-repeat="testmaker in testmakers">
+          <div class="col-sm-12">
             <a href="#/testmakers/{{testmaker._id}}/taketest">
-              <h1>How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} Are You?</h1>
-            </a>
-            <a href="#/testmakers/{{testmaker._id}}/leaderboard">
-            <p> <i class="fa fa-users"></i>  Leaderboard</p>
-            </a> |
-            <a href="#/testmakers/{{testmaker._id}}/addquestions">Add Questions</a>
-
+              <h1 style="color:" >How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} Are You?</h1>
+            </a><br>
+            <a href="#/testmakers/{{testmaker._id}}/leaderboard"> <p> <i class="fa fa-users"></i>  Leaderboard</p></a> | <a href="#/testmakers/{{testmaker._id}}/addquestions">Add Questions</a> </p>
           </div><!-- End .Col -->
         </div><!-- End .Row -->
 
-        <div class="row">
-          <div class="col-sm-6">
+
+        <div class="row new-testmaker">
+          <div class="col-sm-6  col-centered">
             <form ng-submit="addTestmaker()" style="margin-top: 30px;">
-              <h3>Create your own test. Enter your name. </h3>
-              <div class="form-group ">
-                <input type="text" class="form-control" placeholder="First Name" ng-model="first_name"></input>
-                <input type="text" class="form-control" placeholder="Last Name" ng-model="last_name"></input>
+              <div class ="row"
+                <h3>Create your own test. Enter your name. </h3>
               </div>
-              <button type="submit" class="btn btn-lg btn-default">Submit</button>
+              <div class="row">
+                <div class="col-md-6 col-sm-6 ">
+                  <input type="text" class="form-control" placeholder="First Name" ng-model="first_name"></input>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input type="text" class="form-control" placeholder="Last Name" ng-model="last_name"></input>
+                </div>
+              </div>
+              <div clas="row">
+                <button type="submit" class="btn btn-lg btn-default">Submit</button>
+              </div>
             </form>
           </div><!-- End .Col -->
         </div><!-- End .Row -->

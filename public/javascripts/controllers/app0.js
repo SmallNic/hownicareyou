@@ -61,6 +61,7 @@ app.controller('TestmakersCtrl', [
     $scope.numCorrect = 0;
     $scope.numQuestions = $scope.testmaker.questions.length
     $scope.score = getScore();
+
     $scope.makeChoice = function(option){
       console.log("makeChoice - option:", $scope.currentQuestion.options[option]);
       console.log("correctChice", $scope.currentQuestion.correctAnswer);
@@ -70,7 +71,7 @@ app.controller('TestmakersCtrl', [
       }
 
       if($scope.index == $scope.numQuestions - 1){
-      // if($scope.index == 5){
+        // if($scope.index == 5)
         //They've answered every question
         // $scope.score = parseFloat($scope.testmaker.questions.length * 100/$scope.numCorrect)
         $scope.score = ($scope.numCorrect * 100)/$scope.numQuestions;
@@ -81,7 +82,6 @@ app.controller('TestmakersCtrl', [
         saveScore($scope.score)
         $state.go('results', {'id':$scope.testmaker._id, 'score':$scope.score});
         $scope.index = 0;
-
       }
       else {
         $scope.index++
@@ -93,8 +93,8 @@ app.controller('TestmakersCtrl', [
     $scope.lederboardVisible = false;
     $scope.restartTest = function(option){
       // $location.path('#/testmakers/'+$scope.testmaker.id+'/taketest')
-
     }
+
   }
 ])
 
@@ -117,5 +117,8 @@ app.controller('MainCtrl', [
       $scope.last_name=''
     }
 
-  },
+
+
+
+  }
 ])

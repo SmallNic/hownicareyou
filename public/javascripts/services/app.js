@@ -29,9 +29,11 @@ app.factory('testmakers', ['$http', function($http){
   }
 
   obj.create = function(testmaker){
+    console.log("gonna add a testmaker - service")
+    console.log("testmaker", testmaker)
     return $http.post('/testmakers', testmaker).success(function(data){
-      obj.tesmakers.push(testmaker);
-      //grab the post that was just saved to the DB in the post call and add that to the angular model/service
+      obj.testmakers.push(testmaker);
+      //grab the testmaker that was just saved to the DB in the post call and add that to the angular model/service
     })
   }
 
@@ -52,11 +54,8 @@ app.factory('testmakers', ['$http', function($http){
     console.log("gonna add a testtaker - service")
     console.log("id", id)
     console.log("testtaker", testtaker)
-
     return $http.post('/testmakers/' + id + '/testtakers', testtaker);
   }
-
-
 
   return obj
 }])

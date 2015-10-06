@@ -56,9 +56,10 @@ app.controller('TestmakersCtrl', [
       // $scope.score = '';
     }
 
-    $scope.index = 2;
+    $scope.index = 0;
     $scope.currentQuestion = $scope.testmaker.questions[$scope.index];
     $scope.numCorrect = 0;
+    $scope.numQuestions = $scope.testmaker.questions.length
     $scope.score = getScore();
     $scope.makeChoice = function(option){
       console.log("makeChoice - option:", $scope.currentQuestion.options[option]);
@@ -68,18 +69,18 @@ app.controller('TestmakersCtrl', [
         $scope.numCorrect++;
       }
 
-      // if($scope.index == $scope.testmaker.questions.length - 1){
-      if($scope.index == 5){
+      if($scope.index == $scope.numQuestions - 1){
+      // if($scope.index == 5){
         //They've answered every question
         // $scope.score = parseFloat($scope.testmaker.questions.length * 100/$scope.numCorrect)
-        $scope.score = ($scope.numCorrect * 100)/4;
+        $scope.score = ($scope.numCorrect * 100)/$scope.numQuestions;
         console.log("$scope.numCorrect", $scope.numCorrect)
         console.log("$scope.score", $scope.score)
         console.log("$state.params", $state.params)
         console.log("$stateParams", $stateParams)
         saveScore($scope.score)
         $state.go('results', {'id':$scope.testmaker._id, 'score':$scope.score});
-        $scope.index = 2;
+        $scope.index = 0;
 
       }
       else {
@@ -107,13 +108,13 @@ app.controller('MainCtrl', [
     /*any change or modification made to $scope.posts will be stored in the service and immediately accessible by any other module that injects the posts service.*/
 
     $scope.addTestmaker = function(){
-      if(!$scope.first_name || $scope.title ==='') {return}
+      if(!$scope.first_name || $scope.first_name ==='') {return}
       testmakers.create({
         first_name: $scope.first_name,
         last_name: $scope.last_name
       });
-      $scope.title=''
-      $scope.link=''
+      $scope.first_name=''
+      $scope.last_name=''
     }
 
   },

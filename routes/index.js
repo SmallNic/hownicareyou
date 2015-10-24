@@ -30,6 +30,7 @@ router.post('/testmakers', function(req, res, next){
 
   testmaker.save(function(err, testmaker){
     if(err){ return next(err); }
+    console.log("testmaker", testmaker)
     res.json(testmaker)
   })
 })
@@ -54,7 +55,7 @@ router.get('/testmakers/:testmaker', function(req, res, next){
 
   req.testmaker.populate('questions', function(err, testmaker){
     if (err){ return next(err); }
-    
+
     req.testmaker.populate('testtakers', function(err, testmaker){
       if (err){ return next(err); }
       res.json(testmaker)

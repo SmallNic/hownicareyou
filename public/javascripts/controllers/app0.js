@@ -100,19 +100,29 @@ app.controller('TestmakersCtrl', [
 
 app.controller('MainCtrl', [
   '$scope',
+  '$state',
   'testmakers', // this injects the testmaker service into our controller so we can access its data
-  function($scope, testmakers){
+  function($scope, $state, testmakers){
     $scope.test = 'Hello world!';
 
     $scope.testmakers = testmakers.testmakers; //does this set up two way data binding?
     /*any change or modification made to $scope.posts will be stored in the service and immediately accessible by any other module that injects the posts service.*/
+
+    $scope.testmaker = null;
+
 
     $scope.addTestmaker = function(){
       if(!$scope.first_name || $scope.first_name ==='') {return}
       testmakers.create({
         first_name: $scope.first_name,
         last_name: $scope.last_name
+      }).success(function(data){
+        console.log("data", data)
+        $state.go('addQuestions', {'id':data._id})
+        // $state.go('leaderboard', {'id':$scope.testmaker._id, 'score':$scope.score})
+        //grab the testmaker that was just saved to the DB in the post call and add that to the angular model/service
       });
+      // console.log("testmakers.current_testmaker_id", testmakers.current_testmaker_id)
       $scope.first_name=''
       $scope.last_name=''
     }

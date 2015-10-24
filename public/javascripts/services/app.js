@@ -33,6 +33,7 @@ app.factory('testmakers', ['$http', function($http){
     console.log("testmaker", testmaker)
     return $http.post('/testmakers', testmaker).success(function(data){
       obj.testmakers.push(testmaker);
+      // console.log("data", data)
       //grab the testmaker that was just saved to the DB in the post call and add that to the angular model/service
     })
   }

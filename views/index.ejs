@@ -37,38 +37,107 @@
 
     <script type="text/ng-template" id="/home.html">
       <div class="container-fluid">
-        <div class="row"  ng-repeat="testmaker in testmakers">
-          <div class="col-sm-12">
-            <a href="#/testmakers/{{testmaker._id}}/taketest">
-              <h1 style="color:" >How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} Are You?</h1>
-            </a><br>
-            <a href="#/testmakers/{{testmaker._id}}/leaderboard"> <p> <i class="fa fa-users"></i>  Leaderboard</p></a> | <a href="#/testmakers/{{testmaker._id}}/addquestions">Add Questions</a> </p>
-          </div><!-- End .Col -->
-        </div><!-- End .Row -->
 
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="page_title">
+              <a href="#/home"><h1>How Me Are You?</h1></a>
+            </div>
+          </div>
+        </div>
 
-        <div class="row new-testmaker">
-          <div class="col-sm-6  col-centered">
-            <form ng-submit="addTestmaker()" style="margin-top: 30px;">
-              <div class ="row"
-                <h3>Create your own test. Enter your name. </h3>
-              </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="home_page page_border center_block">
               <div class="row">
-                <div class="col-md-6 col-sm-6 ">
-                  <input type="text" class="form-control" placeholder="First Name" ng-model="first_name"></input>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <input type="text" class="form-control" placeholder="Last Name" ng-model="last_name"></input>
-                </div>
-              </div>
-              <div clas="row">
-                <button type="submit" class="btn btn-lg btn-default">Submit</button>
-              </div>
-            </form>
-          </div><!-- End .Col -->
-        </div><!-- End .Row -->
+                <div class="col-sm-3 col-sm-offset-3 col-xs-12">
+                <a href="#/make-test" class="btn btn-lg btn-primary">Make a Test</a>
+                </div><!-- .col -->
+
+                <div class="col-sm-3 col-xs-12">
+                  <a href="#/take-test" class="btn btn-lg btn-primary">Take a Test</a>
+                </div><!-- .col -->
+              </div><!-- .row -->
+
+            </div><!-- .home_page -->
+          </div><!-- .col -->
+        </div><!-- .row -->
+
+      </div><!-- End .Container-Fluid -->
+    </script>
 
 
+    <script type="text/ng-template" id="/take-test.html">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="page_title">
+              <a href="#/home"><h1>How Me Are You?</h1></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="page_border take_test center_block">
+
+                <div class="row"  ng-repeat="testmaker in testmakers">
+                  <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+                    <a href="#/testmakers/{{testmaker._id}}/taketest">
+                      <h2 style="color:" >How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} Are You?</h2>
+                    </a><br>
+                    <a href="#/testmakers/{{testmaker._id}}/leaderboard"> <p> <i class="fa fa-users"></i>  Leaderboard</p></a> | <a href="#/testmakers/{{testmaker._id}}/addquestions">Add Questions</a> </p>
+                  </div><!--  .col -->
+                </div><!--  .row -->
+
+            </div><!-- .page_border .take_test -->
+          </div><!-- .col -->
+        </div><!-- .row -->
+
+      </div><!-- End .Container-Fluid -->
+    </script>
+
+    <script type="text/ng-template" id="/make-test.html">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="page_title">
+              <a href="#/home"><h1>How Me Are You?</h1></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="page_borders center_block">
+
+              <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+
+                  <form ng-submit="addTestmaker()" style="margin-top: 30px;">
+                    <div class ="row">
+                      <h3>Create your test.</h3>
+                    </div>
+
+                    <div class="row name_input">
+                      <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+                        <input type="text" class="form-control" placeholder="First Name" ng-model="first_name"></input>
+                      </div>
+                    </div>
+
+                    <div clas="row">
+                      <button type="submit" class="btn btn-lg btn-default">Next</button>
+                    </div>
+                  </form>
+
+                </div><!--  .col -->
+              </div><!--  .row -->
+
+            </div><!-- .page_borders -->
+          </div><!-- .col -->
+        </div><!-- .row -->
 
       </div><!-- End .Container-Fluid -->
     </script>

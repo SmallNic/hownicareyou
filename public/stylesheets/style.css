@@ -1,13 +1,46 @@
+/* Sitewide */
 body {
   background:black;
   color:white;
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.page_title {
+  text-align:center;
+  margin:0% 3%;
+}
+
+.page_title a{
+  color:white;
+}
+
+.page_title a:hover{
+  color:#d9534f;
+}
+
+.page_border{
+  border: solid 4px #00b7ff;
+  border-radius:25px;
+  height:85vh;
+  margin:2%;
 }
 
 a {
   color: #00B7FF;
 }
+
+.center_block {
+  text-align:center;
+  margin:5px auto;
+}
+
+/*.home_button {
+  margin-top: 20px;
+  position:fixed;
+  top:25px;
+  left:65px;
+}*/
 
 .q-and-a {
   text-align:center;
@@ -97,4 +130,36 @@ a:hover .svg {
 .new-testmaker {
   margin-top:50px;
 
+}
+
+
+/* Home Page */
+
+.home_page h2 {
+  margin:10px;
+  text-align: left;
+
+}
+
+.home_page .row {
+  position:relative;
+  top:40%;
+}
+
+.home_page .row * {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+/* Take Test */
+
+.take_test {
+  overflow:scroll;
+  white-space: nowrap;
+}
+
+/* Make Test */
+
+.name_input {
+  margin-top:15%;
 }

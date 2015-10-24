@@ -19,6 +19,30 @@ app.config([
         }
       })
 
+      .state('take-test',{
+        url: '/take-test',
+        templateUrl: '/take-test.html',
+        controller: 'MainCtrl',
+        resolve: {
+          postPromise: ['testmakers', function (testmakers) {
+            return testmakers.getAll();
+          }]
+        }
+      })
+
+      .state('make-test',{
+        url: '/make-test',
+        templateUrl: '/make-test.html',
+        controller: 'MainCtrl',
+        resolve: {
+          postPromise: ['testmakers', function (testmakers) {
+            return testmakers.getAll();
+          }]
+        }
+      })
+
+
+
       .state('addquestions', {
         url: '/testmakers/{id}/addquestions',  //'id' is actually a route parameter that will be made available to our controller.
         templateUrl: '/addquestions.html',

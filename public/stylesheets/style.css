@@ -24,6 +24,7 @@ body {
   border-radius:25px;
   height:85vh;
   margin:2%;
+  padding:1%;
 }
 
 a {
@@ -35,12 +36,7 @@ a {
   margin:5px auto;
 }
 
-/*.home_button {
-  margin-top: 20px;
-  position:fixed;
-  top:25px;
-  left:65px;
-}*/
+
 
 .q-and-a {
   text-align:center;
@@ -53,8 +49,8 @@ a {
 }
 
 .col-centered{
-    float: none;
-    margin: 0 auto;
+  float: none;
+  margin: 0 auto;
 }
 
 .questions, .heading, #leaderboard {
@@ -87,7 +83,7 @@ form * {
 }
 
 .table-hover tbody tr:hover td {
-    background: #4fa74f;
+  background: #4fa74f;
 }
 
 a p{
@@ -115,16 +111,12 @@ h1{
 }
 
 /*.svg:hover {
-  background:#fff;
+background:#fff;
 
 }*/
 
 a:hover .svg {
   background:#fff;
-}
-
-.questions-list, .new-question{
-  margin-top:50px;
 }
 
 .new-testmaker {
@@ -138,7 +130,6 @@ a:hover .svg {
 .home_page h2 {
   margin:10px;
   text-align: left;
-
 }
 
 .home_page .row {
@@ -162,4 +153,81 @@ a:hover .svg {
 
 .name_input {
   margin-top:15%;
+}
+
+/* Add Question */
+.create_test {
+  overflow:scroll;
+  white-space:normal;
+}
+
+.new_questions, .add_question{
+  margin-top:30px;
+}
+
+.new_questions h3, .add_question h3{
+  color:#d9534f;
+  margin:0;
+  font-size:24px;
+}
+
+li {
+  text-align: left;
+}
+
+/*.submit_test {
+margin-top: 20px;
+position:fixed;
+top:25px;
+right:65px;
+}*/
+
+/* Taketest */
+
+.taketest h2 {
+  margin:110px 0 60px;
+}
+
+.option_one{
+  text-align:right;
+}
+
+.option_two{
+  text-align:left;
+}
+
+/* Results */
+
+.results h2, .results form {
+  margin:110px 0 60px;
+}
+
+.results form {
+  height:33px;
+}
+
+.results .row {
+  margin:40px 0px;
+}
+
+.results input{
+  display:inline-block;
+  width:30%;
+}
+
+.results button{
+  position: relative;
+  top: -3px;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+  .option_one, .option_two{
+    display:block;
+    text-align: center;
+  }
+
 }

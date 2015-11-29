@@ -41,8 +41,6 @@ app.config([
         }
       })
 
-
-
       .state('addquestions', {
         url: '/testmakers/{id}/addquestions',  //'id' is actually a route parameter that will be made available to our controller.
         templateUrl: '/addquestions.html',

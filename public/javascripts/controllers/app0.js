@@ -11,12 +11,13 @@ app.controller('TestmakersCtrl', [
 
     $scope.addQuestion = function(){
       console.log("gonna add a question - controller")
-      if(!$scope.content || $scope.content === '') {return}
+      if(!$scope.option1 || $scope.option1 === '' || !$scope.option2 || $scope.option2 === '' || !$scope.correctAnswer || $scope.correctAnswer === '') {return}
       testmakers.addQuestion(testmaker._id, {
         content: $scope.content,
         options: [$scope.option1, $scope.option2],
         correctAnswer: $scope.correctAnswer
       }).success(function(question){
+        console.log("success - ", question)
         $scope.testmaker.questions.push(question);
       });
       $scope.content = '';
@@ -118,7 +119,7 @@ app.controller('MainCtrl', [
         last_name: $scope.last_name
       }).success(function(data){
         console.log("data", data)
-        $state.go('addQuestions', {'id':data._id})
+        $state.go('addquestions', {'id':data._id})
         // $state.go('leaderboard', {'id':$scope.testmaker._id, 'score':$scope.score})
         //grab the testmaker that was just saved to the DB in the post call and add that to the angular model/service
       });

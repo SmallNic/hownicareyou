@@ -2,12 +2,15 @@ app.controller('TestmakersCtrl', [
   '$scope',
   '$state',
   '$stateParams',
+  '$location',
   'testmakers', //This is called injecting the testmakers service (from our factory). It is equivalent to obj
   'testmaker', //The individual post
 
-  function($scope, $state, $stateParams, testmakers, testmaker){
+  function($scope, $state, $stateParams, $location, testmakers, testmaker){
     //$scope.post = posts.posts[$stateParams.id] //= service.arrayName
     $scope.testmaker = testmaker;
+    $scope.currentUrl = $location.$$path;
+    console.log("$scope.currentUrl", $location.$$path)
 
     $scope.addQuestion = function(){
       console.log("gonna add a question - controller")
@@ -51,7 +54,7 @@ app.controller('TestmakersCtrl', [
         score: $scope.score
       }).success(function(testtaker){
         $scope.testmaker.testtakers.push(testtaker);
-        $state.go('leaderboard', {'id':$scope.testmaker._id, 'score':$scope.score})
+        // $state.go('leaderboard', {'id':$scope.testmaker._id, 'score':$scope.score})
       });
       // $scope.name = '';
       // $scope.score = '';

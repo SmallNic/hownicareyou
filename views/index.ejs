@@ -201,8 +201,7 @@
                       <h3> Added Questions </h3>
                       <ul>
                         <li ng-repeat="question in testmaker.questions.slice().reverse() ">
-
-                          <p><i class="fa fa-times-circle"></i> {{question.options[0]}} -OR- {{question.options[1]}}</p>
+                          <p><i class="fa fa-times-circle" ng-click="deleteQuestion(question)" ></i> {{question.options[0]}} -OR- {{question.options[1]}}</p>
                           <p>Correct answer: {{question.correctAnswer}}</p>
                         </li>
                       </ul>

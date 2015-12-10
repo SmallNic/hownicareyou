@@ -63,7 +63,6 @@ router.get('/testmakers/:testmaker', function(req, res, next){
 
   })
 
-
 })
 
 router.post('/testmakers/:testmaker/questions', function(req, res, next){
@@ -83,6 +82,20 @@ router.post('/testmakers/:testmaker/questions', function(req, res, next){
       res.json(question)
     })
   })
+})
+
+router.post('/delete', function( req, res, next ){
+  console.log("remove question - SERVER")
+  console.log("req", req.body)
+  question  = req.body
+  id = req.body._id
+  Question.remove({_id: id}, function(err){
+    if(err){ console.log("error - question not saved"); return next(err); }
+    console.log ("question deleted")
+    res.json(question)
+  })
+  // console.log("res", res)
+  // console.log("next", next)
 })
 
 router.post('/testmakers/:testmaker/testtakers', function(req, res, next){

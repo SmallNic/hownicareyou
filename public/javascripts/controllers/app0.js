@@ -29,6 +29,21 @@ app.controller('TestmakersCtrl', [
       $scope.correctAnswer = '';
     }
 
+    $scope.deleteQuestion = function(question){
+      console.log("gonna delete a question - controller")
+      console.log("scope.testmaker", testmaker)
+      console.log("scope.question", question)
+      testmakers.deleteQuestion(testmaker._id, question).success(function(){
+        console.log("success")
+        for(var i = 0; i < $scope.testmaker.questions.length; i++){
+          if($scope.testmaker.questions[i] == question){
+            console.log("match", $scope.testmaker.questions[i])
+            $scope.testmaker.questions.splice(i,1);
+          }
+        }
+      })
+    }
+
     // $scope.deleteQuestion = function(){
     //   console.log("gonna add a question - controller")
     //   if(!$scope.content || $scope.content === '') {return}

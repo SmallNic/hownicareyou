@@ -51,6 +51,13 @@ app.factory('testmakers', ['$http', function($http){
     return $http.post('/testmakers/' + id + '/questions', question);
   }
 
+  obj.deleteQuestion = function(id, question){
+    console.log("Delete Question - console")
+    console.log("id", id)
+    console.log("question", question)
+    return $http.post('/delete', question);
+  }
+
   obj.addTesttaker = function(id, testtaker){
     console.log("gonna add a testtaker - service")
     console.log("id", id)

@@ -180,18 +180,44 @@
 
                   <div class="row">
                     <div class="col-sm-12">
-                      <h3>In life you are either a this or a that. Come up with two possibilites: a this and a that. Then supply the correct answer.</h3>
+                      <p class="site_descrip">
+                        In life you are either a cat person or a dog person. You either love mayonaisse or hate mayonaisse. You're either a night owl or a early bird. You're either <span class="blue">this</span> or <span class="red">that</span>.
+                      </p>
+                      <p class="site_descrip">
+                        At HowMeAreYou.com you can create a test of the <span class="italic">this's</span> and <span class="italic">that's</span> that are important to you and then quiz others, to see how much like you they are
+                      </p>
+                      <p class="site_descrip">
+                        To get started, come up with two possibilites: a this and a that. Then check the radio button for the correct answer. When you are ready, click Done at the upper right and share your test!
+                      </p>
                     </div>
                   </div>
 
                   <div class="row add_question">
                     <div class="col-sm-6 col-xs-12">
-                      <form ng-submit="addQuestion()" style="margin-top: 30px;">
-                        <h3>Add a new question</h3>
+                      <form ng-submit="addQuestion()">
+                        <h3>
+                          Add a new question
+                        </h3>
                         <div class="form-group ">
-                          <input type="text" class="form-control" placeholder="Option 1" ng-model="option1"></input>
-                          <input type="text" class="form-control" placeholder="Option 2" ng-model="option2"></input>
-                          <input type="text" class="form-control" placeholder="Correct Answer" ng-model="correctAnswer"></input>
+
+                          <div class="row">
+                            <div class="col-xs-1">
+                              <input type="radio" name="option" value="{{option1}}" ng-model="correctAnswer">
+                            </div>
+                            <div class="col-xs-11">
+                              <input type="text" class="form-control" placeholder="Option 1" ng-model="option1"></input>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-xs-1">
+                              <input type="radio" name="option" value="{{option2}}" ng-model="correctAnswer" >
+                            </div>
+                            <div class="col-xs-11">
+                              <input type="text" class="form-control" placeholder="Option 2" ng-model="option2"></input>
+                            </div>
+                          </div>
+
                         </div>
                         <button type="submit" class="btn btn-lg btn-default">Submit</button>
                       </form>

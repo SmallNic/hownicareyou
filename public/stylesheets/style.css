@@ -169,13 +169,34 @@ a:hover .svg {
 }
 
 /* Add Question */
+
+.site_descrip{
+  font-size:1.5em;
+  text-align:justify;
+}
+
+.blue{
+  color:blue;
+}
+
+.red{
+  color:red;
+}
+
+.italic{
+  font-style: italic;
+}
 .create_test {
   overflow:scroll;
   white-space:normal;
 }
 
-.new_questions, .add_question{
-  margin-top:30px;
+input[type="radio"]{
+  margin-top:15px;
+}
+
+.add_question{
+  margin-top:20px;
 }
 
 .new_questions h3, .add_question h3{

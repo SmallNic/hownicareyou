@@ -17,6 +17,7 @@
 
     <!-- Google Merriweather Stylesheet -->
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
     <!-- Latest build of jQuery -->
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -25,10 +26,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
     <script src="/javascripts/angularApp.js"></script>
     <script src="/javascripts/controllers/app0.js"></script>
     <script src="/javascripts/services/app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
   </head>
   <body ng-app="hownicareyou" ng-controller="MainCtrl">
@@ -49,15 +53,33 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="home_page page_border center_block">
-              <div class="row">
-                <div class="col-sm-3 col-sm-offset-3 col-xs-12">
-                <a href="#/make-test" class="btn btn-lg btn-primary">Make a Test</a>
-                </div><!-- .col -->
 
-                <div class="col-sm-3 col-xs-12">
-                  <a href="#/take-test" class="btn btn-lg btn-primary">Take a Test</a>
-                </div><!-- .col -->
-              </div><!-- .row -->
+              <div class="epigraph justify montserrat">
+                <p>
+                  "There's only two kinds of people in the world: Beatles people and Elvis people. Now Beatles people can like Elvis, and Elvis people can like Beatles. But nobody likes them both equally."
+                </p>
+                <p class="right_align">
+                  Pulp Fiction
+                <p>
+              </div><!-- epigraph justify montserrat -->
+
+
+              <div class="make_or_take">
+                <div class="row">
+                  <div class="col-sm-5 col-xs-12 option_one">
+                  <a href="#/make-test" class="btn btn-lg btn-primary">Make a Test</a>
+                  </div><!-- .col -->
+
+                  <div class="col-sm-2 col-xs-12">
+                    <h3>or</h3>
+                  </div>
+
+                  <div class="col-sm-5 col-xs-12 option_two">
+                    <a href="#/take-test" class="btn btn-lg btn-primary">Take a Test</a>
+                  </div><!-- .col -->
+                </div><!-- .row -->
+              </div><!--make_or_take-->
+
 
             </div><!-- .home_page -->
           </div><!-- .col -->
@@ -111,15 +133,19 @@
 
         <div class="row">
           <div class="col-xs-12">
-            <div class="page_border center_block">
+            <div class="page_border make_test center_block">
+
+              <div class ="row">
+                <div class="col-xs-12">
+                  <h3>To create a test, enter your name</h3>
+                </div>
+              </div>
 
               <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 col-xs-12">
 
-                  <form ng-submit="addTestmaker()" style="margin-top: 30px;">
-                    <div class ="row">
-                      <h3>Create your test</h3>
-                    </div>
+                  <form ng-submit="addTestmaker()">
+
 
                     <div class="name_input">
                       <div class="row ">
@@ -165,7 +191,7 @@
             <div class="page_border create_test center_block">
 
               <div class="row">
-                <div class="col-sm-10 col-sm-offset-1 col-xs-12">
+                <div class="col-xs-12">
 
                   <div class ="row">
                     <div class="col-sm-10">
@@ -180,15 +206,35 @@
 
                   <div class="row">
                     <div class="col-sm-12">
-                      <p class="site_descrip">
-                        In life you are either a cat person or a dog person. You either love mayonaisse or hate mayonaisse. You're either a night owl or a early bird. You're either <span class="blue">this</span> or <span class="red">that</span>.
-                      </p>
-                      <p class="site_descrip">
-                        At HowMeAreYou.com you can create a test of the <span class="italic">this's</span> and <span class="italic">that's</span> that are important to you and then quiz others, to see how much like you they are
-                      </p>
-                      <p class="site_descrip">
-                        To get started, come up with two possibilites: a this and a that. Then check the radio button for the correct answer. When you are ready, click Done at the upper right and share your test!
-                      </p>
+                      <div class="instructions justify twenty_px_margins">
+                        <p>
+                          The either/or is the principle behind HowMeAreYou.com. You create a test with a series of either/or questions:
+                        </p>
+                        <div class="row twenty_px_margins">
+
+                          <div class="col-xs-12 col-sm-4 center_align ten_px_margins">
+                            <button type="button" class="btn btn-lg btn-success">Coke</button>
+                            <span class="block">or</span>
+                            <button type="button" class="btn btn-lg btn-success">Pepsi</button>
+                          </div>
+
+                          <div class="col-xs-12 col-sm-4 center_align ten_px_margins">
+                            <button type="button" class="btn btn-lg btn-success">Dogs</button>
+                            <span class="block">or</span>
+                            <button type="button" class="btn btn-lg btn-success">Babies</button>
+                          </div>
+
+                          <div class="col-xs-12 col-sm-4 center_align ten_px_margins">
+                            <button type="button" class="btn btn-lg btn-success">Sing</button>
+                            <span class="block">or</span>
+                            <button type="button" class="btn btn-lg btn-success">Dance</button>
+                          </div>
+
+                        </div>
+                        <p>
+                          Add an <span class="italic light_green">either</span> and an <span class="italic light_green">or</span> below, select which answers are the "right" ones by checking the radio button, and submit the question. When you have entered enough, click Done at the upper right and then share your test with your friends.
+                        </p>
+                      </div><!-- instructions -->
                     </div>
                   </div>
 
@@ -201,19 +247,15 @@
                         <div class="form-group ">
 
                           <div class="row">
-                            <div class="col-xs-1">
+                            <div class="col-xs-12">
                               <input type="radio" name="option" value="{{option1}}" ng-model="correctAnswer">
-                            </div>
-                            <div class="col-xs-11">
                               <input type="text" class="form-control" placeholder="Option 1" ng-model="option1"></input>
                             </div>
                           </div>
 
                           <div class="row">
-                            <div class="col-xs-1">
+                            <div class="col-xs-12">
                               <input type="radio" name="option" value="{{option2}}" ng-model="correctAnswer" >
-                            </div>
-                            <div class="col-xs-11">
                               <input type="text" class="form-control" placeholder="Option 2" ng-model="option2"></input>
                             </div>
                           </div>
@@ -264,13 +306,48 @@
                 <h1>How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} {{testmaker.last_name.substr(0,1).toUpperCase() + testmaker.last_name.substr(1)}} Are You?</h1>
               </a>
 
+              <!--
               <div ng-show="!link">
                 <a class="" data-toggle="" href="#" ng-click="link = !link">Share Test</a>
               </div>
 
               <div ng-show="link">
-                <a class="" data-toggle="" href="#" ng-click="link = !link">Copy & Paste: http://www.howmeareyou.com/#/testmakers/{{testmaker._id}}/taketest</a>
+                <span class="" data-toggle="" href="#" ng-click="link = !link">Copy & Paste: http://www.howmeareyou.com/#/testmakers/{{testmaker._id}}/taketest</span>
               </div>
+              -->
+
+              <!-- Trigger the modal with a button -->
+              <div>
+                <a class="" data-toggle="modal" href="#" data-target="#myModal">Share Test</a>
+              </div>
+
+              <!-- Modal -->
+              <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">
+                        Copy & Paste Link
+                      </h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} {{testmaker.last_name.substr(0,1).toUpperCase() + testmaker.last_name.substr(1)}} Are You?
+                      </p>
+                      <input type="text" class="form-control" value="http://www.howmeareyou.com/#/testmakers/{{testmaker._id}}/taketest"></input>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+
 
             </div>
           </div>
@@ -311,18 +388,6 @@
     <script type="text/ng-template" id="/results.html">
       <div class="container-fluid">
 
-      <!--
-      // <div class="dropdown">
-      //   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Options</a>
-      //   <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-      //     <li><a tabindex="-1" href="#">Make a Test</a></li>
-      //     <li><a tabindex="-1" href="#">Take a Test</a></li>
-      //     <li class="divider"></li>
-      //     <li><a tabindex="-1" href="#">Separated link</a></li>
-      //   </ul>
-      // </div>
-      -->
-
         <div class="row">
           <div class="col-xs-12">
             <div class="page_title">
@@ -330,6 +395,7 @@
                 <h1>How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} {{testmaker.last_name.substr(0,1).toUpperCase() + testmaker.last_name.substr(1)}} Are You?</h1>
               </a>
 
+              <!--
               <div ng-show="!link">
                 <a class="" data-toggle="" href="#" ng-click="link = !link">Share Test</a>
               </div>
@@ -337,11 +403,42 @@
               <div ng-show="link">
                 <a class="" data-toggle="" href="#" ng-click="link = !link">Copy & Paste: http://www.howmeareyou.com/#/testmakers/{{testmaker._id}}/taketest</a>
               </div>
+              -->
 
-            </div>
-          </div>
-        </div>
+              <!-- Trigger the modal with a button -->
+              <div>
+                <a class="" data-toggle="modal" href="#" data-target="#myModal">Share Test</a>
+              </div>
 
+              <!-- Modal -->
+              <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">
+                        Copy & Paste Link
+                      </h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>How {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} {{testmaker.last_name.substr(0,1).toUpperCase() + testmaker.last_name.substr(1)}} Are You?
+                      </p>
+                      <input type="text" class="form-control" value="http://www.howmeareyou.com/#/testmakers/{{testmaker._id}}/taketest"></input>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+            </div><!-- page_title -->
+          </div><!-- col-xs-12 -->
+        </div><!-- row -->
 
 
         <div class="row">
@@ -361,7 +458,7 @@
                   <button type="button" class="btn btn-lg btn-primary" ng-click="formIsVisible = !formIsVisible"><i class="fa fa-star"></i>  Save Name</button>
                 </div><!-- .col -->
 
-                <div ng-show="takeTestIsVisible" class="col-sm-5 col-xs-12 option_one">
+                <div ng-show="takeTestIsVisible" class="col-sm-5 col-xs-12 option_one" id="take_a_test">
                   <a href="#/take-test" class="btn btn-lg btn-primary">Take a Test</a>
                 </div><!-- .col -->
 
@@ -381,27 +478,31 @@
               // </div>
               -->
 
-              <div class="row">
+              <div class="row make_a_test">
                 <div class="col-xs-12">
                   <a href="#/make-test" class="btn btn-lg btn-success"><i class="fa fa-plus"></i>  Make a Test</a>
                 </div>
               </div>
 
-              <table class="table-bordered table-hover centered" id="leaderboard">
-                <tr ng-repeat="testtaker in testmaker.testtakers | orderBy: '-_id'">
-                  <td>{{testtaker.name}}
-                  </td>
-                  <td>{{testtaker.score}}%
-                  </td>
-                  <td ng-if="testmaker.first_name == 'Nic'">
-                    <div style="width:120px;">
-                      <div style="width:{{testtaker.score/100 * 120}}px; overflow:hidden;">
-                        <img src="images/NicTest3.jpg">
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+              <div class="row">
+                <div class="col-xs-12">
+                  <table class="table-bordered table-hover centered" id="leaderboard">
+                    <tr ng-repeat="testtaker in testmaker.testtakers | orderBy: '-_id'">
+                      <td>{{testtaker.name}}
+                      </td>
+                      <td>{{testtaker.score}}%
+                      </td>
+                      <td id="pic" ng-if="testmaker.first_name == 'Nic'">
+                        <div style="width:120px;">
+                          <div style="width:{{testtaker.score/100 * 120}}px; overflow:hidden;">
+                            <img src="images/NicTest3.jpg">
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
 
             </div><!-- .results -->
           </div><!-- .col -->

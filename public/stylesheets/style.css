@@ -6,9 +6,35 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.justify{
+  text-align:justify;
+}
+
+.right_align{
+  text-align: right;
+}
+
+.left_align{
+  text-align:left;
+}
+
+.center_align{
+  text-align: center;
+}
+
+
+.twenty_px_margins{
+  margin:20px 0px;
+}
+
+.ten_px_margins{
+  margin:20px 0px;
+}
+
 .page_title {
   text-align:center;
   margin:0% 3%;
+  word-wrap: break-word;
 }
 
 .page_title a{
@@ -95,6 +121,11 @@ form * {
   font-size: 24px;
 }
 
+#leaderboard #pic{
+  display:none;
+
+}
+
 .table-hover tbody tr:hover td {
   background: #4fa74f;
 }
@@ -140,29 +171,58 @@ a:hover .svg {
 
 /* Home Page */
 
-.home_page h2 {
-  margin:10px;
-  text-align: left;
+.helvetica_thin{
+  font-family: "Helvetica Thin", sans-serif;
 }
 
-.home_page .row {
-  position:relative;
-  top:40%;
+.montserrat{
+  font-family: "Montserrat"
 }
 
-.home_page .row * {
-  margin-top: 1%;
-  margin-bottom: 1%;
+.epigraph{
+  padding:0px 40px;
+  font-size:26px;
+  margin:30px 0px;
+  /*letter-spacing: -1px;*/
 }
+
+.site_descrip{
+  padding:0px 30px;
+  font-size:22px;
+  margin:30px 0px;
+}
+
+.make_or_take{
+  margin:100px 0px;
+}
+
+.make_or_take h3{
+  position: relative;
+  top: -10px;
+}
+
+
+.home_page{
+  overflow:scroll;
+  white-space:normal;
+}
+
 
 /* Take Test */
 
 .take_test {
   overflow:scroll;
-  white-space: nowrap;
+  white-space: inherit;
+  padding: 0px 10px;
 }
 
 /* Make Test */
+
+
+.make_test {
+  /*overflow:scroll;*/
+  white-space: normal;
+}
 
 .name_input {
   margin-top:15%;
@@ -170,25 +230,22 @@ a:hover .svg {
 
 /* Add Question */
 
-.site_descrip{
-  font-size:1.5em;
-  text-align:justify;
-}
-
-.blue{
-  color:blue;
-}
-
-.red{
-  color:red;
+.light_green{
+  color:#5cb85c;
 }
 
 .italic{
   font-style: italic;
 }
+
 .create_test {
   overflow:scroll;
   white-space:normal;
+}
+
+.instructions{
+  font-size:22px;
+  padding:0px 30px;
 }
 
 input[type="radio"]{
@@ -197,12 +254,18 @@ input[type="radio"]{
 
 .add_question{
   margin-top:20px;
+  padding:0 30px;
 }
 
-.new_questions h3, .add_question h3{
+.add_question h3{
   color:#d9534f;
   margin:0;
   font-size:24px;
+}
+
+.add_question .form-control{
+  display: inline-block;
+  width: 90%;
 }
 
 .new_questions ul {
@@ -243,6 +306,15 @@ right:65px;
   text-align:left;
 }
 
+.modal-title{
+  color:black;
+}
+
+.modal-body p{
+  color:black;
+  margin:5px 0px;
+}
+
 /* Results */
 
 .results h2, .results form {
@@ -254,7 +326,15 @@ right:65px;
 }
 
 .results .row {
-  margin:40px 0px;
+  /*margin:40px 0px;*/
+}
+
+.take_a_test{
+  margin:4px 0px;
+}
+
+.make_a_test{
+  margin:4px 0px;
 }
 
 .results input{
@@ -280,6 +360,49 @@ right:65px;
   .option_one, .option_two{
     display:block;
     text-align: center;
+  }
+
+  .make_or_take a{
+    margin:10px 0px;
+  }
+
+  .new_questions{
+    margin:20px 0px;
+  }
+
+  /* Home Page */
+  .epigraph{
+    padding:0px 20px;
+    font-size:20px !important;
+  }
+
+  .btn-lg {
+    font-size: 20px !important;
+  }
+
+  /* Add Questions */
+  .instructions {
+    text-align: left !important;
+  }
+
+  /* Results */
+
+  .results {
+    overflow:scroll;
+    white-space: inherit;
+    word-wrap: break-word;
+
+  }
+
+
+
+}
+
+
+@media (max-width: 360px) {
+
+  .block{
+    display:block;
   }
 
 }

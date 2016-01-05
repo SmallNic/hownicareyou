@@ -93,7 +93,7 @@ app.controller('TestmakersCtrl', [
         // if($scope.index == 5)
         //They've answered every question
         // $scope.score = parseFloat($scope.testmaker.questions.length * 100/$scope.numCorrect)
-        $scope.score = ($scope.numCorrect * 100)/$scope.numQuestions;
+        $scope.score = Math.round(($scope.numCorrect * 100)/$scope.numQuestions);
         console.log("$scope.numCorrect", $scope.numCorrect)
         console.log("$scope.score", $scope.score)
         console.log("$state.params", $state.params)

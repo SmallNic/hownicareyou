@@ -208,7 +208,7 @@
                     <div class="col-sm-12">
                       <div class="instructions justify twenty_px_margins">
                         <p>
-                          The either/or is the principle behind HowMeAreYou.com. You create a test with a series of either/or questions:
+                           Here at howmeareyou.com you can to create a test with a series of either/or questions to see just how similar other people are to you. For example:
                         </p>
                         <div class="row twenty_px_margins">
 
@@ -219,20 +219,20 @@
                           </div>
 
                           <div class="col-xs-12 col-sm-4 center_align ten_px_margins">
-                            <button type="button" class="btn btn-lg btn-success">Dogs</button>
+                            <button type="button" class="btn btn-lg btn-success">Spiderman</button>
                             <span class="block">or</span>
-                            <button type="button" class="btn btn-lg btn-success">Babies</button>
+                            <button type="button" class="btn btn-lg btn-success">Superman</button>
                           </div>
 
                           <div class="col-xs-12 col-sm-4 center_align ten_px_margins">
-                            <button type="button" class="btn btn-lg btn-success">Sing</button>
+                            <button type="button" class="btn btn-lg btn-success">The city</button>
                             <span class="block">or</span>
-                            <button type="button" class="btn btn-lg btn-success">Dance</button>
+                            <button type="button" class="btn btn-lg btn-success">The suburbs</button>
                           </div>
 
                         </div>
                         <p>
-                          Add an <span class="italic light_green">either</span> and an <span class="italic light_green">or</span> below, select which answers are the "right" ones by checking the radio button, and submit the question. When you have entered enough, click Done at the upper right and then share your test with your friends.
+                          Add an <span class="italic light_green">either</span> and an <span class="italic light_green">or</span> below, select which answers are the "right" ones by checking the radio button, and submit the question. When you feel you have created enough, click Done in the upper right corner and then share your test.
                         </p>
                       </div><!-- instructions -->
                     </div>
@@ -446,7 +446,7 @@
             <div class="results page_border center_block">
 
               <div ng-show="!formIsVisible">
-                <h2>You are {{score.toFixed(2)}}% {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} {{testmaker.last_name.substr(0,1).toUpperCase() + testmaker.last_name.substr(1)}}</h2>
+                <h2>You are {{Math.round(score)}}% {{testmaker.first_name.substr(0,1).toUpperCase() + testmaker.first_name.substr(1)}} {{testmaker.last_name.substr(0,1).toUpperCase() + testmaker.last_name.substr(1)}}</h2>
               </div>
 
               <form ng-show="formIsVisible" ng-submit="addTesttaker(); formIsVisible = !formIsVisible; takeTestIsVisible = !takeTestIsVisible" >

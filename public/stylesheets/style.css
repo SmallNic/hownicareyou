@@ -116,10 +116,14 @@ form * {
 
 }
 
+#leaderboard{
+  margin-top: 40px;
+
+}
+
 #leaderboard td{
   padding: 0px 30px;
   font-size: 24px;
-  margin-top: 40px;
 }
 
 #leaderboard #pic{

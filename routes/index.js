@@ -1,4 +1,7 @@
 var express = require('express');
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
+var fs = require('fs');
 var router = express.Router();
 module.exports = router;
 var mongoose = require('mongoose');
@@ -141,4 +144,30 @@ router.param('testtaker', function(req, res, next, id){
     req.testtaker = testtaker;
     return next();
   })
+})
+
+router.post('/uploads', upload.single('avatar'), function (req, res, next) {
+  var dirname = require('path').dirname(__dirname);
+  var filename = req.files.file.name;
+  var path = req.files.file.path;
+  var type = req.files.file.mimetype;
+
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
+  var file = req.file;
+
+  var read_stream =  fs.createReadStream(dirname + '/' + path);
+
+  var conn = req.conn;
+  var Grid = require('gridfs-stream');
+  Grid.mongo = mongoose.mongo;
+
+  var gfs = Grid(conn.db);
+
+  var writestream = gfs.createWriteStream({
+    filename: filename
+  });
+  read_stream.pipe(writestream);
+
+
 })

@@ -4,8 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+// var multer = require('multer');
+// var fs = require('fs');
 
 var app = express();
+
 
 require('./models/Testmakers');
 require('./models/Questions');
@@ -18,6 +21,10 @@ mongoose.connect(mongodbUri);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+//Multer set up
+// var multer  = require('multer')
+// var upload = multer({ dest: 'uploads/' })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -64,6 +71,7 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
 
 
 module.exports = app;

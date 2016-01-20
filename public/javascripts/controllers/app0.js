@@ -129,7 +129,6 @@ app.controller('MainCtrl', [
 
     $scope.testmaker = null;
 
-
     $scope.addTestmaker = function(){
       if(!$scope.first_name || $scope.first_name ==='') {return}
       testmakers.create({
@@ -145,8 +144,6 @@ app.controller('MainCtrl', [
       $scope.first_name=''
       $scope.last_name=''
     }
-
-
 
 
   }
